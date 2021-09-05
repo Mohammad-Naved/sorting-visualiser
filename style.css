@@ -1,0 +1,19 @@
+body {
+  background-color: rgb(46, 46, 46);
+}
+.btn {
+  margin: 5px;
+}
+
+/* .array-container {
+  display: flex;
+} */
+.bars {
+  display: flex;
+  align-items: center;
+}
+.bar {
+  background-color: green;
+  margin: 2px;
+  width: auto;
+}
