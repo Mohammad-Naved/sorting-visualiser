@@ -1,18 +1,36 @@
 const bars = document.querySelector(".bars");
-const array = [];
+
 const random = () => {
-  return Math.floor(Math.random() * 50 + 10);
+  return Math.floor(Math.random() * 100 + 5);
 };
-const n = random();
+console.log(random());
+let array = [];
 
-for (let i = 0; i < n; i++) {
-  array[i] = random();
-}
+const createNewArray = () => {
+  deleteChild();
+  let n = random();
+  array = [];
+  for (let i = 0; i < n; i++) {
+    array.push(random());
+  }
+  console.log(array);
 
-for (let i = 0; i < n; i++) {
-  const element = document.createElement("div");
-  element.classList.add("bar");
-  element.style.height = `${array[i]}px`;
-  bars.appendChild(element);
-}
-console.log(array);
+  for (let i = 0; i < n; i++) {
+    const bar = document.createElement("div");
+    bar.classList.add("bar");
+    bar.style.height = `${array[i] * 2}px`;
+    bars.appendChild(bar);
+  }
+};
+
+const deleteChild = () => {
+  console.log("Herper Funcytion is called");
+  const bars = document.querySelector(".bars");
+  bars.innerHTML = "";
+};
+
+const newArray = document.querySelector(".newArray");
+
+newArray.addEventListener("click", function () {
+  createNewArray();
+});
